@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#" th:text="${titlename}"></a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/display}">Users List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/addtask}">Tasks List</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class ="container">
+  <div class = "row">
+    <h1> Task list </h1>
+  </div>
+    <div class = "row">
+    <div class = "col-lg-3">
+      <a th:href = "@{/addtaskmain}" class = "btn btn-primary btn-sm mb-3"> Create Task</a>
+    </div>
+  </div>
+  <table class = "table table-striped table-bordered">
+    <thead class = "table-dark">
+    <tr>
+      <th> Title </th>
+      <th> Description </th>
+      <th> Deadline </th>
+      <th> Status </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each = "user1: ${TaskHomePage}">
+      <td th:text = "${user1.title}"></td>
+      <td th:text = "${user1.description}"></td>
+      <td th:text = "${user1.deadline}"></td>
+      <td th:text = "${user1.status}"></td>
+
+<!--      <td>-->
+<!--      <select>-->
+<!--        <option th:each="user : ${user1.tasksUsers}"-->
+<!--                th:text="${user.userName}"-->
+<!--                th:value="${user.userName}">-->
+<!--        </option>-->
+<!--        </select>-->
+<!--      </td>-->
+    </tr>
+    </tbody>
+
+  </table>
+
+</div>
+
+</body>
+</html>

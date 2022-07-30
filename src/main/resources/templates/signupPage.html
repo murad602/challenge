@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+<div>
+    <h1>Customer Registration</h1>
+</div>
+<div>
+    <p style="color: red" th:text="${error}"> </p>
+</div>
+<form action="#" th:action="@{/save}" th:object="${customer}"
+      method="POST">
+    <p>Organization Name <input type="text" name="organizationName" required = true/></p>
+    <p>Phone Number <input type="number" name="phoneNumber" required = true/></p>
+    <p>Address <input type="text" name="address" required = true/></p>
+    <p>User name <input type="text" name="customerName" required = true/></p>
+    <p>Email <input type="email" name="customerEmail" required = true/></p>
+    <p>Password <input type="password" name="customerPassword" required = true minlength="6"/></p>
+    <p> <input type="submit" value="Sing up"/></p>
+
+</form>
+</body>
+</html>
