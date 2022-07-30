@@ -14,7 +14,7 @@ public class JavaMailSend {
                          String subject,
                          String body){
         SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setFrom("mabdullayev770@gmail.com");
+        mailMessage.setFrom("your email");
         mailMessage.setTo(toEmail);
         mailMessage.setText(body);
         mailMessage.setSubject(subject);
